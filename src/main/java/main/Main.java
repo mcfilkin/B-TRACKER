@@ -12,6 +12,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 public class Main extends Application {
+
     public static Stage mainStage;
 
     @Override
@@ -29,7 +30,6 @@ public class Main extends Application {
                 System.exit(0);
             }
         });
-        //primaryStage.show();
 
         root = FXMLLoader.load(getClass().getResource("/login.fxml"));
         Stage stage = new Stage();

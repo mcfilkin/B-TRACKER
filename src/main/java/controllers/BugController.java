@@ -146,7 +146,6 @@ public class BugController {
         if (send.isSelected()) {
             setMember();
         }
-        //short_description.getScene().getWindow().hide();
     }
 
     public void setMember() {

@@ -60,5 +60,4 @@ public class LoginController {
         Main.mainStage.show();
     }
 
-
 }

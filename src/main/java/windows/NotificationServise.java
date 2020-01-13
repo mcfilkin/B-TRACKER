@@ -3,6 +3,7 @@ package windows;
 import java.awt.*;
 
 public abstract class NotificationServise {
+
     public static void showNotification(String title, String body) throws AWTException {
         if (SystemTray.isSupported()) {
             SystemTray tray = SystemTray.getSystemTray();
@@ -12,4 +13,5 @@ public abstract class NotificationServise {
             trayIcon.displayMessage(title, body, TrayIcon.MessageType.NONE);
         }
     }
+
 }
