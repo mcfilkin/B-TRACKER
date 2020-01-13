@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <TableView fx:id="table" layoutX="14.0" layoutY="67.0" prefHeight="530.0" prefWidth="782.0">
+            <columns>
+                <TableColumn fx:id="tableId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="defectId" prefWidth="297.0" text="Дефект" />
+                <TableColumn fx:id="createId" minWidth="0.0" prefWidth="122.0" text="Создан" />
+                <TableColumn fx:id="updateId" prefWidth="112.0" text="Изменён" />
+                <TableColumn fx:id="statusId" minWidth="0.0" prefWidth="158.0" text="Состояние" />
+            </columns>
+        </TableView>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="825.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Управление">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showNewBug" text="Новый дефект..." />
+                  <MenuItem mnemonicParsing="false" text="Статистика..." />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Выход" />
+              </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Настройки">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Учётная запись..." />
+                <MenuItem mnemonicParsing="false" text="Параметры..." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Справка">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showAbout" text="О программе" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="14.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#showNewBug" text="Новый дефект" />
+      <Button layoutX="115.0" layoutY="34.0" mnemonicParsing="false" text="Статистика" />
+      <ProgressBar layoutX="494.0" layoutY="38.0" prefHeight="18.0" prefWidth="302.0" progress="0.24" />
+      <Label layoutX="340.0" layoutY="38.0" text="Текущий спринт (13 дней):" />
+    </children>
+</AnchorPane>
