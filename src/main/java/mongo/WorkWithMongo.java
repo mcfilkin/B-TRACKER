@@ -8,13 +8,15 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import controllers.LoginController;
 import exceptions.IncorrectPasswordException;
 import exceptions.UserNotFoundException;
+import info.Bug;
+import info.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.bson.Document;
-import info.Bug;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +42,7 @@ public abstract class WorkWithMongo {
 
     public static void authorize(String login, String password) throws IncorrectPasswordException, UserNotFoundException {
         BasicDBObject query = new BasicDBObject();
-        query.put("user", login);
+        query.put("email", login);
         FindIterable<Document> result = db.getCollection("users").find(query);
         List<Document> list = new ArrayList<>();
         for (Document a : result) {
@@ -50,11 +52,28 @@ public abstract class WorkWithMongo {
         if (!list.isEmpty()) {
             if (!password.equals(result.first().get("password"))) {
                 throw new IncorrectPasswordException();
+            } else {
+                LoginController.username = list.get(0).get("user").toString();
             }
         } else {
             throw new UserNotFoundException();
         }
 
+    }
+
+    public static ObservableList<User> getUsers() {
+        ObservableList<User> users = FXCollections.observableArrayList();
+        MongoCollection<Document> a = db.getCollection("users");
+        MongoCursor<Document> cur = a.find().cursor();
+        while (cur.hasNext()) {
+            User user = new User();
+            Document c = cur.next();
+            user.setId(c.get("_id").toString());
+            user.setLogin(c.get("user").toString());
+            user.setEmail(c.get("email").toString());
+            users.add(user);
+        }
+        return users;
     }
 
     public static ObservableList<Bug> getShortInfo() {

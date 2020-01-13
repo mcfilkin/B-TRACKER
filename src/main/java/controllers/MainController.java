@@ -1,11 +1,8 @@
 package controllers;
 
 import info.Bug;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,8 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import javafx.util.Duration;
 import main.Main;
 import mongo.WorkWithMongo;
 
@@ -116,6 +111,19 @@ public class MainController {
         Parent root = FXMLLoader.load(getClass().getResource("/new_bug.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Новый дефект");
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(Main.mainStage);
+        stage.getIcons().add(new Image("/bug.png"));
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
+    void showStatistic() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/statistic.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Статистика");
         stage.setScene(new Scene(root));
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(Main.mainStage);

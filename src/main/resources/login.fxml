@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="295.0" style="-fx-background-color: #F9F9F9;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
       <AnchorPane layoutX="-3.0" prefHeight="52.0" prefWidth="318.0" style="-fx-background-color: #D8D8D8;">
@@ -14,7 +13,7 @@
                   <Font name="Arial Black" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="29.0" text="//ничто не пройдет незамеченным" />
+            <Label layoutX="48.0" layoutY="30.0" text="//дефект не пройдет незамеченным"/>
          </children>
       </AnchorPane>
       <TextField fx:id="loginText" layoutX="26.0" layoutY="75.0" prefHeight="25.0" prefWidth="244.0" promptText="Логин" />

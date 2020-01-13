@@ -11,7 +11,6 @@ import org.bson.Document;
 
 import java.util.Date;
 
-
 public class NewBugController {
     @FXML
     private TextField short_description;
@@ -45,6 +44,7 @@ public class NewBugController {
         ObservableList<String> pri = FXCollections.observableArrayList("Urgent", "High", "Normal", "Low");
         priority.setItems(pri);
     }
+
     @FXML
     void addDefect() {
         Document doc = new Document();

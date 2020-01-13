@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="286.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="controllers.StatisticController">
+    <children>
+        <ProgressBar layoutX="11.0" layoutY="260.0" prefHeight="18.0" prefWidth="579.0" progress="0.35"/>
+        <Label layoutX="15.0" layoutY="203.0" text="Текущий спринт:"/>
+        <Label layoutX="15.0" layoutY="220.0" text="Дней пройдено: 7"/>
+        <Label layoutX="15.0" layoutY="237.0" text="Дней осталось: 13"/>
+        <Slider blockIncrement="20.0" layoutX="-48.0" layoutY="109.0" rotate="-90.0"/>
+        <Label layoutX="20.0" layoutY="14.0" text="Текущий уровень качества:"/>
+        <Label layoutX="38.0" layoutY="89.0" text="Желательна доработка"/>
+        <Label layoutX="38.0" layoutY="49.0" text="Запрет на выпуск"/>
+        <Label layoutX="38.0" layoutY="129.0" text="Удовлетворительное"/>
+        <Label layoutX="37.0" layoutY="169.0" text="Соотвествует требованиям качества" textFill="#00790c">
+            <effect>
+                <Lighting>
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                    <light>
+                        <Light.Distant/>
+                    </light>
+                </Lighting>
+            </effect>
+        </Label>
+        <Label layoutX="285.0" layoutY="203.0" text="Открытые дефекты: 2 minor"/>
+        <Label layoutX="285.0" layoutY="220.0" text="Закрытые дефеты: 2 major"/>
+        <Label layoutX="285.0" layoutY="236.0" text="В стадии исправления: 1 minor"/>
+        <PieChart fx:id="pie" layoutX="281.0" layoutY="6.0" prefHeight="196.0" prefWidth="303.0"
+                  title="Статистика по дефектам"/>
+    </children>
 </AnchorPane>
