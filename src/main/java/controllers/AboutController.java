@@ -11,7 +11,7 @@ public class AboutController {
 
     @FXML
     void hyperlinkGit() throws IOException, URISyntaxException {
-        URI uri = new URI("https://github.com/mcfilkin");
+        URI uri = new URI("https://github.com/mcfilkin/BTRACKER");
         Desktop.getDesktop().browse(uri);
     }
 
